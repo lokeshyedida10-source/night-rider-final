@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Rider: Endless Bike</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hud-top">
+      <div class="brand">NIGHT RIDER</div>
+      <div class="stat">Score: <span id="score">0</span></div>
+      <div class="stat">Best: <span id="best">0</span></div>
+      <div class="stat">Speed: <span id="speed">1.0x</span></div>
+    </header>
+
+    <section class="game-frame">
+      <canvas id="gameCanvas" width="480" height="780" aria-label="Endless bike game"></canvas>
+
+      <div id="overlay" class="overlay visible">
+        <div class="panel">
+          <h1>Night Rider</h1>
+          <p>Avoid traffic. Survive as long as possible.</p>
+          <p class="controls">Move: <kbd>A</kbd> <kbd>D</kbd> or <kbd>&larr;</kbd> <kbd>&rarr;</kbd></p>
+          <button id="startBtn">Start Ride</button>
+        </div>
+      </div>
+
+      <div id="gameOver" class="overlay">
+        <div class="panel">
+          <h2>Crash!</h2>
+          <p>Final Score: <span id="finalScore">0</span></p>
+          <button id="restartBtn">Ride Again</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls-row">
+      <button id="leftBtn" class="touch-btn" aria-label="Move left">◀</button>
+      <button id="audioBtn" class="touch-btn audio-btn" aria-label="Toggle sound">🔊</button>
+      <button id="rightBtn" class="touch-btn" aria-label="Move right">▶</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
